@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <section id="status">…</section>
+        <section id="status">status…</section>
         <section id="form">…</section>
         <section id="queue">…</section>
       </div>
