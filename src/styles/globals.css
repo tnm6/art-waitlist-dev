@@ -1,0 +1,9 @@
+#homepage_sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  text-align: center;
+}
+

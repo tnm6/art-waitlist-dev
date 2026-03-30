@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './styles/globals.css'
+import CommStatusComp from './components/CommStatusComp';
+import FormComp from './components/FormComp';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <section id="status">status…</section>
-        <section id="form">…</section>
+      <div id = "homepage_sections">
+        <section id="status"> <CommStatusComp/> </section>
+        <section id="form"> <FormComp/> </section>
         <section id="queue">…</section>
       </div>
       
