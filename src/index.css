@@ -1,7 +1,9 @@
+
 :root {
-  color: rgba(255, 255, 255, 0.87);
+  color: #DBD0B7;
   background: #010000;
   background: linear-gradient(180deg, rgba(1, 0, 0, 1) 0%, rgba(30, 25, 25, 1) 100%);
+  /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
 }
 
 /*

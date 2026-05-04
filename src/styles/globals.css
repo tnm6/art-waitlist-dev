@@ -1,9 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+ body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 #homepage_sections {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding: 2rem;
+  width: 100%;
+  margin: auto;
+  font-size: 18px;
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  /*border: 1px solid blueviolet;*/
+}
+
+#homepage_sections h2 {
+  color: #CAA888;
+  text-align: center;
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+span {
+  color: #ff6e6e;
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#homepage_sections input[type='text'], input[type='email'], input[type='number']{
+  background-color: #d0b29600;
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+  border: none;
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #DBD0B7;
+  color: #CAA888;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#commissioner_info input{
+  width: 100%;
+  text-align: center;
+
+}
+
+#commissioner_info {
   text-align: center;
 }
 
+#homepage_sections input:focus {
+  /*border-color: rgba(255, 48, 107, 0);*/
+  background-color: #77636300;
+  outline: none;
+}
+
+textarea{
+  font-size: 16px;
+  background-image: url("/src/assets/ui.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #caa88800;
+  resize: none;
+  border: 2px solid #cccccc00;
+  border-radius: 4px;
+  padding: 70px 20px 0px 20px;
+  color: #CAA888;
+}
+
+
+.myDropdown select {
+  background-color: #00000000;
+  font-size: 24px;
+  color: #CAA888;
+  border: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.myDropdown select option {
+    background-color: #eed7c1;
+    color: #5f2020;
+    font-weight: bold;
+}
+
+.myDropdown select:hover {
+    background-color: #a13719;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.myCaption {
+  text-align: center;
+}
+
+
+
+.sticky {
+  border: 1px solid rgba(197, 61, 2, 0);
+  background-color: #ff6f6f;
+  color: black;
+  font-weight: bold;
+  width: 20%;
+  left: 100%;
+  height: 300px;
+  bottom: 100px;
+  position: sticky;
+  z-index: 0;
+}
+
+.receipt {
+  color: black;
+  font-weight: bold;
+  /*border: 2px solid black;*/
+}
+
+.receipt p{
+  font-size: 12px;
+}
+
+.testBorder {
+  border: 2px solid pink;
+}
+
+.receipt span {
+  color: #4b1818;
+}
+
+.myColSpan {
+  column-span: 2;
+}
+
+.emptyCell {
+  width: 40%;
+}
+
+.radioSet label {
+  color: #DBD0B7;
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+}
+
+.myLabel {
+ /* color: #DBD0B7;
+  /*font-family: "Inknut Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;*/
+  text-align: justify;
+}
+/*for the 'describe the illustration Q*/
+
+
+
+.questionContainer, .subContainer, .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ /* border: 1px solid rgb(197, 138, 2);*/
+}
+
+.container {
+  width: 75%;
+  margin: auto;
+  /*border: 1px dashed rgb(228, 144, 152);*/
+}
+
+.subContainer {
+  width: 75%;
+  text-align: left;
+  /*border: 1px dashed rgb(187, 144, 228);*/
+}
+
+
+.radioSet input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; 
+ /* border: 1px solid rgb(226, 208, 43);*/
+}
+
+.artworkExample {
+  max-width: 800px;
+  width: 60%;
+  z-index: 0;
+  /*border: 1px solid blueviolet;*/
+}
+
+.flower {
+  position: absolute;
+  top: 30%;
+  max-width: 350px;
+  width: 40%;
+  z-index: 1;
+  /*border: 1px solid rgb(226, 43, 189);*/
+}
+
+.flower.left {
+  left: 0;
+  top: -2%;
+  transform: translateX(-60%) rotate(10deg);
+}
+
+.flower.right {
+  right: 0;
+  top: 15%;
+  transform: translateX(60%) rotate(-10deg);
+}
+
+
+.swayLHS {
+    animation: swayLHS 8s infinite;
+    transform-origin: bottom left;
+}
+@keyframes swayLHS {
+    0%, 100%{ transform: translateX(-60%) rotate(10deg);}
+    50%{ transform: translateX(-60%) rotate(20deg); }
+}
+
+
+.swayRHS {
+    animation: swayRHS 10s infinite;
+    transform-origin: bottom right;
+}
+@keyframes swayRHS {
+    0%, 100%{ transform: translateX(60%) rotate(-10deg);}
+    50%{ transform: translateX(60%) rotate(-20deg) }
+}
+
+
+@media (max-width: 768px) {
+  .artworkExample {
+    width: 120%;
+  }
+
+  .flower {
+    width: 45%;
+  }
+
+  .flower.left {
+    left: -0%;
+  }
+
+  .flower.right {
+    right: -0%;
+  }
+  
+}
+
+.spin {
+  animation: spinOnce 0.5s ease-in-out;
+}
+
+@keyframes spinOnce {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}

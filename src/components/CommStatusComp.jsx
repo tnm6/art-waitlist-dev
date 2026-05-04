@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function CommStatusComp() {
 
-   const status = "Closed";
+   const status = "Waitlist active";
    let status_expl;
    
     if (status == "Open") {
@@ -21,8 +21,10 @@ function CommStatusComp() {
     <>
       <div>
         <h2>Commission status:</h2>
-        <p>{status}</p>
-        <p>{status_expl}</p>
+        <div className="container">
+          <p>{status}</p>
+          <p>{status_expl}</p>
+        </div>
       </div>
     </>
   )
