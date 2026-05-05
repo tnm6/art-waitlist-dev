@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'formbold-react';
 
 //images
-const starRadioUnselected = "src/assets/starGrey24x.png";
-const starRadioSelected = "src/assets/starOrange24x.png";
+const starRadioUnselected = "src/assets/starG24x.webp";
+const starRadioSelected = "src/assets/starO224x.webp";
 
 const portraitPrice = "£75+";
 const environmentPrice = "£75+";
@@ -30,21 +30,21 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
     
 
     const sizeImages = {
-        Half_body: "src/assets/tpws.png",
-        Full_body: "src/assets/giddon.png",
-        null: "src/assets/choose.png",
+        Half_body: "src/assets/tpws.webp",
+        Full_body: "src/assets/giddon.webp",
+        null: "src/assets/chooseSize.webp",
     };
 
     const backgroundImages = {
-        Simple: "src/assets/annabeth.png",
-        Complex: "src/assets/annabeth_bg.png",
-        null: "src/assets/choose.png",
+        Simple: "src/assets/annabeth.webp",
+        Complex: "src/assets/annabeth_bg.webp",
+        null: "src/assets/chooseBG.webp",
     };
 
     const numberImages = {
-        1: "src/assets/sam.png",
-        2: "src/assets/samClover.png",
-        3: "src/assets/samCloverAlex.png",
+        1: "src/assets/sam.webp",
+        2: "src/assets/samClover.webp",
+        3: "src/assets/samCloverAlex.webp",
     };
 
 
@@ -57,12 +57,13 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
     <div>
         <div data-aos="fade-down">
             <h2>What size portrait?</h2>
+            <div className="subText"><br/>{typeOfPortrait == null ? "Make a selection" : <br/>}</div>
         </div>
 
             <div className="hero">
-                    <img className="flower left swayLHS" src="src/assets/red_flower.png" />
-                    <img className="artworkExample" src={sizeImages[typeOfPortrait]} alt={typeOfPortrait+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.png")}/>
-                    <img className="flower right swayRHS" src="src/assets/white_flower.png" />
+                    <img className="flower left swayLHS" src="src/assets/longFblue.webp" />
+                    <img className="artworkExample" src={sizeImages[typeOfPortrait]} alt={typeOfPortrait+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
+                    <img className="flower right swayRHS" src="src/assets/orangeF.webp" />
             </div>
 
             <div className="questionContainer">
@@ -127,7 +128,7 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
                             : value >= 3 ? numberImages[3]
                             : numberImages[1]}
                     alt={value+" character example"}
-                    onError={(e) => (e.currentTarget.src = "src/assets/vase.png")}/>
+                    onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
                 
             </div>
 
@@ -171,12 +172,13 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
     <div>
         <div data-aos="fade-down">        
             <h2>How detailed is the background?</h2>
+            <div className="subText"><br/>{backgroundComplexity == null ? "Make a selection" : <br/>}</div>
         </div>
 
             <div className="hero">
-                    <img className="flower left swayLHS" src="src/assets/red_flower.png" />
-                    <img className="artworkExample" src={backgroundImages[backgroundComplexity]} alt={backgroundComplexity+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.png")}/>
-                    <img className="flower right swayRHS" src="src/assets/white_flower.png" />
+                    <img className="flower left swayLHS" src="src/assets/blueF.webp" />
+                    <img className="artworkExample" src={backgroundImages[backgroundComplexity]} alt={backgroundComplexity+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
+                    <img className="flower right swayRHS" src="src/assets/pinkF.webp" />
             </div>
 
             <div className="questionContainer">
@@ -231,9 +233,15 @@ function CommercialRelatedFields({commUseState}) {
         return <>
         <div data-aos="fade-down">
             <div className='questionContainer'>
+                <div className="subContainer">
                 <label for="commercial_intention">Describe how the commissioned artwork will be used commercially </label> <br/>
                 
-                <input type="text" id="commercial_intention" name="commercial_intention"></input> <br/><br/>
+                <textarea id="commercial_intention" 
+                        name="commercial_intention" 
+                        placeholder="Book cover, character prints, game assets..."
+                        required></textarea> <br/><br/>
+
+            </div>
             </div>
         </div>
         </>
@@ -241,14 +249,16 @@ function CommercialRelatedFields({commUseState}) {
     return null;
 }
 
-function CommercialExplanation(explNeeded){
+function CommercialExplanation({explNeeded}){
     
-    if (explNeeded == "No") {
+    if (explNeeded) {
      return <>
-        <div data-aos="fade-down">
-            <p> <span>Personal use:</span> Artwork that you won't sell or redistribute to gain profit. E.g., a profile picture, fanart (even of an original character*) that you just want to post on social media, or print a copy for yourself to keep </p>
-            <p> <span>Commercial use:</span> Artwork you directly make profit off of, or use to assist in making a profit off of something else. E.g., book covers (for publishing. Non-published work is personal use), art prints to be distributed with book copies, artwork you intend to use regularly for marketing or in promotional campaigns, artwork to be included in a commercial product. </p>
-            <p> *If you're an author commissioning artwork of your own characters, and you only want to post the artwork to show them off, I wouldn't apply a commercial fee. If you're still unsure, select either option. If I can take on your project, I'll respond to your request with further clarification. </p>
+        <div className="container">
+            <div data-aos="fade-down">
+                <p> <span>Personal use:</span> Artwork that you won't sell or redistribute to gain profit. E.g., a profile picture, fanart (even of an original character*) that you just want to post on social media, or print a copy for yourself to keep </p>
+                <p> <span>Commercial use:</span> Artwork you directly make profit off of, or use to assist in making a profit off of something else. E.g., book covers (for publishing. Non-published work is personal use), art prints to be distributed with book copies, artwork you intend to use regularly for marketing or in promotional campaigns, artwork to be included in a commercial product. </p>
+                <p> *If you're an author commissioning artwork of your own characters, and you only want to post the artwork to show them off, I wouldn't apply a commercial fee. If you're still unsure, select either option. If I can take on your project, I'll respond to your request with further clarification. </p>
+            </div>
         </div>
         </>
     }      
@@ -264,7 +274,7 @@ function FormComp() {
     const [commUseState, setCommUseState] = useState(null);
     const [animate, setAnimate] = useState(null);
     const [quote, setQuote] =useState(0);
-    const [explNeeded, setExplNeeded] = useState("No");
+    const [explNeeded, setExplNeeded] = useState(false);
 
     const [portraitTypeReceipt, setPortraitTypeReceipt] = useState("");
     const [charCountReceipt, setCharCountReceipt] = useState(1);
@@ -274,10 +284,10 @@ function FormComp() {
     const [printAddon, setPrintAddon] = useState("No");
 
     const artworkImages = {
-        Portrait: "src/assets/jude_blur.png",
-        Environment: "src/assets/cloudpanels2.png",
-        Other: "src/assets/vase.png",
-        null: "src/assets/choose.png",
+        Portrait: "src/assets/jude.webp",
+        Environment: "src/assets/cloudpanel.webp",
+        Other: "src/assets/vase.webp",
+        null: "src/assets/chooseArtwork.webp",
     };
 
    
@@ -336,17 +346,17 @@ return (
 
         
         <h2>What type of artwork would you like?*</h2>
-                
+         <div className="subText"><br/>{typeOfComm == null ? "Make a selection" : <br/>}</div>
+
         <div className="hero">
-            <img className="flower left swayLHS" src="src/assets/white_flowerFLIPPED.png" />
-            <img className="artworkExample" src={artworkImages[typeOfComm]} alt={typeOfComm+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.png")}/>
-            <img className="flower right swayRHS" src="src/assets/white_flower.png" />
+            <img className="flower left swayLHS" src="src/assets/whiteF.webp" />
+            <img className="artworkExample" src={artworkImages[typeOfComm]} alt={typeOfComm+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
+            <img className="flower right swayRHS" src="src/assets/blueF.webp" />
         </div>
 
-        <div>Test</div>
 
         <div className="questionContainer">
-
+           
             <div className="radioSet">
                 <label for="portrait_pc">
                     <img src={typeOfComm === "Portrait" ? starRadioSelected : starRadioUnselected} 
@@ -400,8 +410,10 @@ return (
                 </label> <br/>
 
             </div>
-
-           <p><i>If the illustration's focal point is a detailed figure, please select portrait. <br/> This includes book covers with detailed figures. Background complexity can be specified in the next sections. </i></p>
+        
+            <div className="container">
+                <p><i>If the illustration's focal point is a detailed figure, please select portrait. <br/> This includes book covers with detailed figures. Background complexity can be specified in the next sections. </i></p>
+            </div>
 
         </div>
     
@@ -425,34 +437,15 @@ return (
         <div className='questionContainer'>
             <div className='subContainer'>
                 <label for="comm_desc" className="myLabel">
-                    Describe the illustration in as much detail as you think is necessary. Include anything you think that would help me with the artwork e.g., your character's colour scheme, etc.
+                    Describe the illustration in as much detail as you think is necessary. Include anything you think that would help me with the artwork e.g., your character's colour scheme, etc. Feel free to link Pinterest boards and image collections.
                 </label><br/>
+                      
                 <textarea id="comm_desc" 
                         name="comm_desc" 
-                        rows="17" 
-                        cols="40" 
                         placeholder="Describe the artwork..."
                         required></textarea> <br/><br/>
             </div>
 
-            <label for="reference_upload"> 
-                Upload files: 
-                <input type="file" 
-                id="reference_upload" 
-                name="reference_upload"
-                onChange={(event) => {
-                    if (event.target.files && event.target.files[0]) {
-                    if (event.target.files[0].size > 5 * 1000 * 1024) {
-                        console.log("File with maximum size of 5MB is allowed");
-                        return;
-                    }
-
-                    alert("file upload successful");
-                    }
-                }}
-                >
-                </input>
-            </label>
 
 
         </div>
@@ -496,8 +489,9 @@ return (
                 </div>
 
                 <div className="subContainer">
-                 <p onClick={() => {setExplNeeded("No"); console.log(explNeeded)}}><i>What's the difference?</i></p> <br/>
-                    
+                 <p className="myHyperlink"
+                    onClick={() => setExplNeeded(prev => !prev)}><i>What's the difference?</i></p> 
+                 
                  </div>
             </div>
 
@@ -552,13 +546,6 @@ return (
             </div>
         </div>
 
-       
-           {/* <div>
-                <div  style={{border: "2px solid pink", backgroundColor: 'yellow'}}>
-                    TESTING
-                </div>
-            </div>
-            */}
         
 
         <div className="container">
@@ -631,32 +618,25 @@ return (
             <p><span>*</span>Final price will be confirmed if your request has been accepted :&#41;</p>
 
 
+        {/*Receipt*/}
         </div>
-
-                <img src="src/assets/receipt_edit.png" style={{width: "300px"}} alt="receipt paper background" />
+                <img src="src/assets/receiptALT2.webp" style={{width: "500px"}} alt="receipt paper background" />
         </div>
         
     </div>
 
         <div className="container">
-
-            <button type="submit"
-                    >Submit</button>
-            {/*<button type="submit"
-                    disabled={state.submitting}>{state.submitting ? "Submitting..." : "Submit"}</button>/*}
-        
-            {/*<div>
-               {state.errors &&
-                state.errors.getFormErrors().map((error, index) => (
-                    <p key={index}>{error.message}</p>
-                ))}
-
-            </div>*/}
-
+            <br/>
+            <button type="submit">Submit</button>
+            <br/>
+            <br/>
         </div>
 
         </form>
         
+        <div className="footer">
+             &#9733; Questions? Email me on nadiabeeart@gmail.com &#9733;
+        </div>
 
       </div>
     </>

@@ -11,7 +11,7 @@ function App() {
       <div id = "homepage_sections">
         <section id="status"> <CommStatusComp/> </section>
         <section id="form"> <FormComp/> </section>
-        <section id="queue">…</section>
+        
       </div>
       
     </>

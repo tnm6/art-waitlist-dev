@@ -5,6 +5,7 @@
  body {
   overflow-x: hidden;
   position: relative;
+  margin: 0;
 }
 
 #homepage_sections {
@@ -17,6 +18,22 @@
   font-style: normal;
   font-variation-settings: "wdth" 100;
   /*border: 1px solid blueviolet;*/
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.myCaption {
+  text-align: center;
+}
+
+.subText {
+ color: #c09c7d;
+ text-align: center;
+ font-style: italic;
 }
 
 #homepage_sections h2 {
@@ -25,6 +42,7 @@
   font-family: "Julius Sans One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 26px;
 }
 
 span {
@@ -34,6 +52,22 @@ span {
   font-style: normal;
   font-size: 18px;
   font-weight: bold;
+}
+
+button {
+  font-family: "Inconsolata", monospace;
+  font-size: 24px;
+  color: #000000;
+  background-color: #a13719;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ff6e6e;
 }
 
 #homepage_sections input[type='text'], input[type='email'], input[type='number']{
@@ -65,15 +99,17 @@ span {
 
 textarea{
   font-size: 16px;
-  background-image: url("/src/assets/ui.png");
-  background-size: cover;
+  background-image: url("src/assets/ui3.webp");
   background-repeat: no-repeat;
-  background-color: #caa88800;
+  background-size: contain;
+  background-color: #faf1ea;
   resize: none;
-  border: 2px solid #cccccc00;
+  border: 2px solid #cccccc;
   border-radius: 4px;
-  padding: 70px 20px 0px 20px;
-  color: #CAA888;
+  padding: 15px 0px 0px 50px;
+  color: #0d0808;
+  width: 80%;
+  height: 250px;
 }
 
 
@@ -97,15 +133,14 @@ textarea{
 }
 
 
-h1 {
-  text-align: center;
+.myHyperlink {
+  text-decoration: underline;
 }
 
-.myCaption {
-  text-align: center;
+.myHyperlink:hover {
+  cursor: pointer;
+  color: #ff6f6f;
 }
-
-
 
 .sticky {
   border: 1px solid rgba(197, 61, 2, 0);
@@ -151,20 +186,13 @@ h1 {
   font-family: "Inknut Antiqua", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 22px;
+  font-size: 20px;
 }
 
+/*for the 'describe the illustration Q*/
 .myLabel {
- /* color: #DBD0B7;
-  /*font-family: "Inknut Antiqua", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;*/
   text-align: justify;
 }
-/*for the 'describe the illustration Q*/
-
 
 
 .questionContainer, .subContainer, .container {
@@ -201,11 +229,11 @@ h1 {
   justify-content: center;
   align-items: center;
   overflow: visible; 
- /* border: 1px solid rgb(226, 208, 43);*/
+ /*border: 1px solid rgb(226, 208, 43);*/
 }
 
 .artworkExample {
-  max-width: 800px;
+  max-width: 750px;
   width: 60%;
   z-index: 0;
   /*border: 1px solid blueviolet;*/
@@ -222,14 +250,14 @@ h1 {
 
 .flower.left {
   left: 0;
-  top: -2%;
-  transform: translateX(-60%) rotate(10deg);
+  top: -30%;
+  transform: translateX(-65%) rotate(30deg);
 }
 
 .flower.right {
   right: 0;
   top: 15%;
-  transform: translateX(60%) rotate(-10deg);
+  transform: translateX(65%) rotate(-10deg);
 }
 
 
@@ -238,8 +266,8 @@ h1 {
     transform-origin: bottom left;
 }
 @keyframes swayLHS {
-    0%, 100%{ transform: translateX(-60%) rotate(10deg);}
-    50%{ transform: translateX(-60%) rotate(20deg); }
+    0%, 100%{ transform: translateX(-65%) rotate(30deg);}
+    50%{ transform: translateX(-55%) rotate(40deg); }
 }
 
 
@@ -248,8 +276,8 @@ h1 {
     transform-origin: bottom right;
 }
 @keyframes swayRHS {
-    0%, 100%{ transform: translateX(60%) rotate(-10deg);}
-    50%{ transform: translateX(60%) rotate(-20deg) }
+    0%, 100%{ transform: translateX(65%) rotate(-10deg);}
+    50%{ transform: translateX(50%) rotate(-20deg) }
 }
 
 
@@ -283,4 +311,22 @@ h1 {
   to {
     transform: rotate(180deg);
   }
+}
+
+.footer {
+  text-align: center;
+  padding: 50px;
+  background-color: #a13719;
+  color: #DBD0B7;
+}
+
+.footer button {
+  background-color: #DBD0B7;
+  color: #a13719;
+}
+
+.footer button:hover {
+  background-color: #e0bc67;
+  color: #000000;
+  
 }
