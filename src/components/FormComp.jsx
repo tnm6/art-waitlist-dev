@@ -1,9 +1,37 @@
 import { useState } from 'react';
-import { useForm } from 'formbold-react';
+import starRadioUnselected from '../assets/starG24x.webp';
+import starRadioSelected from '../assets/starO224x.webp';
 
-//images
-const starRadioUnselected = "src/assets/starG24x.webp";
-const starRadioSelected = "src/assets/starO224x.webp";
+//type of artwork images
+import pai from "../assets/jude.webp";
+import envi from "../assets/cloudpanel.webp";
+import otheri from "../assets/vase.webp";
+import chooseA from "../assets/chooseArtwork.webp";
+
+//size images
+import hbi from "../assets/tpws.webp";
+import fbi from "../assets/giddon.webp";
+import csi from "../assets/chooseSize.webp";
+
+//bg complexity images
+import sbci from "../assets/annabeth.webp"
+import cbci from "../assets/annabeth_bg.webp";
+import cbgci from "../assets/chooseBG.webp";
+
+//no. of chars images
+import oneC from "../assets/sam.webp";
+import twoC from "../assets/samClover.webp";
+import threeC from "../assets/samCloverAlex.webp";
+
+//flower images
+import longFblue from "../assets/longFblue.webp";
+import orangeF from "../assets/orangeF.webp"
+import blueF from "../assets/blueF.webp";
+import pinkF from "../assets/pinkF.webp";
+import whiteF from "../assets/whiteF.webp";
+
+//receiptimg
+import receiptIMG from "../assets/receiptALT2.webp";
 
 const portraitPrice = "£75+";
 const environmentPrice = "£75+";
@@ -30,21 +58,21 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
     
 
     const sizeImages = {
-        Half_body: "src/assets/tpws.webp",
-        Full_body: "src/assets/giddon.webp",
-        null: "src/assets/chooseSize.webp",
+        Half_body: hbi,
+        Full_body: fbi,
+        null: csi,
     };
 
     const backgroundImages = {
-        Simple: "src/assets/annabeth.webp",
-        Complex: "src/assets/annabeth_bg.webp",
-        null: "src/assets/chooseBG.webp",
+        Simple: sbci,
+        Complex: cbci,
+        null: cbgci,
     };
 
     const numberImages = {
-        1: "src/assets/sam.webp",
-        2: "src/assets/samClover.webp",
-        3: "src/assets/samCloverAlex.webp",
+        1: oneC,
+        2: twoC,
+        3: threeC,
     };
 
 
@@ -61,9 +89,9 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
         </div>
 
             <div className="hero">
-                    <img className="flower left swayLHS" src="src/assets/longFblue.webp" />
-                    <img className="artworkExample" src={sizeImages[typeOfPortrait]} alt={typeOfPortrait+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
-                    <img className="flower right swayRHS" src="src/assets/orangeF.webp" />
+                    <img className="flower left swayLHS" src={longFblue} />
+                    <img className="artworkExample" src={sizeImages[typeOfPortrait]} alt={typeOfPortrait+" example"}/>
+                    <img className="flower right swayRHS" src={orangeF} />
             </div>
 
             <div className="questionContainer">
@@ -128,7 +156,7 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
                             : value >= 3 ? numberImages[3]
                             : numberImages[1]}
                     alt={value+" character example"}
-                    onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
+                    />
                 
             </div>
 
@@ -176,9 +204,9 @@ function PortraitRelatedFields({typeOfComm, pushPortraitType, pushCharCount, pus
         </div>
 
             <div className="hero">
-                    <img className="flower left swayLHS" src="src/assets/blueF.webp" />
-                    <img className="artworkExample" src={backgroundImages[backgroundComplexity]} alt={backgroundComplexity+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
-                    <img className="flower right swayRHS" src="src/assets/pinkF.webp" />
+                    <img className="flower left swayLHS" src={blueF} />
+                    <img className="artworkExample" src={backgroundImages[backgroundComplexity]} alt={backgroundComplexity+" example"}/>
+                    <img className="flower right swayRHS" src={pinkF} />
             </div>
 
             <div className="questionContainer">
@@ -284,10 +312,10 @@ function FormComp() {
     const [printAddon, setPrintAddon] = useState("No");
 
     const artworkImages = {
-        Portrait: "src/assets/jude.webp",
-        Environment: "src/assets/cloudpanel.webp",
-        Other: "src/assets/vase.webp",
-        null: "src/assets/chooseArtwork.webp",
+        Portrait: pai,
+        Environment: envi,
+        Other: otheri,
+        null: chooseA,
     };
 
    
@@ -349,9 +377,9 @@ return (
          <div className="subText"><br/>{typeOfComm == null ? "Make a selection" : <br/>}</div>
 
         <div className="hero">
-            <img className="flower left swayLHS" src="src/assets/whiteF.webp" />
-            <img className="artworkExample" src={artworkImages[typeOfComm]} alt={typeOfComm+" example"} onError={(e) => (e.currentTarget.src = "src/assets/vase.webp")}/>
-            <img className="flower right swayRHS" src="src/assets/blueF.webp" />
+            <img className="flower left swayLHS" src={whiteF} />
+            <img className="artworkExample" src={artworkImages[typeOfComm]} alt={typeOfComm+" example"}/>
+            <img className="flower right swayRHS" src={blueF} />
         </div>
 
 
@@ -620,7 +648,7 @@ return (
 
         {/*Receipt*/}
         </div>
-                <img src="src/assets/receiptALT2.webp" style={{width: "500px"}} alt="receipt paper background" />
+                <img src={receiptIMG} style={{width: "500px"}} alt="receipt paper background" />
         </div>
         
     </div>
